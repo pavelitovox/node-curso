@@ -20,7 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter); // si se elige este  va a linea 7
+//app.use('/', indexRouter); // si se elige este  va a linea 7
+app.use('/', require('./routes/index')); // seria lo mismo que linea 23 y no se usaria linea 7
 app.use('/users', usersRouter);// va a linea 8
 app.use('/productos', productosRouter);// va a linea 9 , creado por video, min 55:33
 // https://youtu.be/eKMDYkSqUKc?t=3333
