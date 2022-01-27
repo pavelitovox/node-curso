@@ -11,7 +11,15 @@ var productosRouter = require('./routes/productos'); //ver por navegador /produc
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views')); //app.set es una variable constante cada vez que se llame-
+//-a var express = require('express')arriba ,ejemplo app.set('nombre', peter); es-
+//- nombre=peter , lo mismo y se manda a llamar con app.get('nombre'). 
+//video de este punto de otro lado aqui  https://youtu.be/sh-NanMOh1Q?t=1076
+
+
+
+console.log("para probar el app.js, usar para investigar, se ejecuta al inicio de todo, ubicalo en app.js");
+console.log(path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

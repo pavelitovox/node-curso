@@ -4,6 +4,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+  console.log(__dirname+" ,esta colocado en index.js para probar"); //para aprender aqui demuestro que __dirnamme me muestra la ruta-
+  // donde est el archvo en local, 
 res.render('index', { title: 'Express' });
 });
 /* GET nosotros. */
