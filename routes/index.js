@@ -11,6 +11,7 @@ res.render('index', { title: 'Express' });
 });
 /* GET nosotros. */
 router.get('/nosotros', function(req, res, next) {
+/*   console.log(req.body); */
   res.render('nosotros', { title: 'nosotros somos ...' });
 });
 
