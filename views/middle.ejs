@@ -1,0 +1,66 @@
+<% include layouts/header.ejs %>
+
+    <div class="container" style="border:1px solid red">
+
+        <h1>
+            <%= title %>
+        </h1>
+
+        escribo lo hablado en video https:youtu.be/bab8b2Ix4K0?t=244 ,entonces , una vez teniendo
+        las rutas configuradas vamos a tener que exportarlo para usarlo en app.js <p></p><p> por eso usamos
+          <strong> module.exports=router </strong> , y entonces como decia una vez exportado se llaman a nuestras
+            rutas en <strong> app.js </strong>con el middleware use <strong> app.use('/probando', require('./pruebas/prueba')); </strong>
+
+        </p>
+
+<p><p></p></p>
+<strong>
+
+ Funcionamiento de los middleware  express.Route() y app.use() </strong>
+       <p><p></p></p>
+        El middleware de manejo de errores siempre utiliza cuatro argumentos. Debe proporcionar
+        cuatro argumentos para identificarlo como una función de middleware de manejo de errores.
+        Aunque no necesite utilizar el objeto next, debe especificarlo para mantener la firma.
+        De lo contrario, el objeto next se interpretará como middleware normal y no podrá manejar errores.
+        <p></p>
+        middleware de manejo de errores de la misma forma que otras funciones de middleware, excepto
+        con cuatro argumentos en lugar de tres, específicamente con la firma (err, req, res, next):
+
+<p><p></p></p>
+       <span style="color: brown;"> Middleware de nivel de direccionador (express.Router())</span>
+<p><p></p></p>
+        El middleware de nivel de direccionador funciona de la misma manera que el middleware de nivel
+        de aplicación, excepto que está enlazado a una instancia de express.Router().
+<p><p></p></p>
+
+
+<span style="color: brown;">  Middleware de nivel de aplicación (app.use())</span>
+<p><p></p></p>
+        Enlace el middleware de nivel de aplicación a una instancia del objeto de aplicación utilizando
+        las funciones app.use() y app.METHOD(), donde METHOD es el método HTTP de la solicitud que maneja
+        la función de middleware (por ejemplo, GET, PUT o POST) en minúsculas.
+<p></p>
+        Este ejemplo muestra una función de middleware sin ninguna vía de acceso de montaje.
+        La función se ejecuta cada vez que la aplicación recibe una solicitud.
+<p></p>
+        var app = express();
+<p></p>
+    <strong>  app.use(function (req, res, next) { <p></p>
+        console.log('Time:', Date.now()); <p></p>
+        next(); <p></p>
+        }); <p></p>
+    </strong>
+
+        Este ejemplo de abajo muestra una <strong> función de middleware </strong> montada en la vía de acceso /user/:id. <p></p>
+        La función se ejecuta para cualquier tipo de solicitud HTTP en la vía de acceso /user/:id.
+<p></p>
+     <strong>  app.use('/user/:id', function (req, res, next) { <p></p>
+        console.log('Request Type:', req.method); <p></p>
+        next(); <p></p>
+        }); <p></p>
+        <br>
+        <br>
+    </strong>
+
+    </div>
+    <% include layouts/footer.ejs %>

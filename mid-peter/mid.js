@@ -7,7 +7,7 @@ var router = express.Router();
 //video exacto  https://youtu.be/eKMDYkSqUKc?t=3453
 router.get('/', function(req, res, next) {
   
-   res.render('pro', { title: 'aqui estoy en carpeta pruebas' });
+   res.render('middle', { title: 'explicando middleware' });
   // res.send ("aqui productosa");
   });
 

@@ -17,6 +17,16 @@ app.set('views', path.join(__dirname, 'views')); //app.set es una variable const
 //video de este punto de otro lado aqui  https://youtu.be/sh-NanMOh1Q?t=1076
 
 
+/* El middleware de manejo de errores siempre utiliza cuatro argumentos. Debe proporcionar 
+cuatro argumentos para identificarlo como una función de middleware de manejo de errores.
+ Aunque no necesite utilizar el objeto next, debe especificarlo para mantener la firma.
+  De lo contrario, el objeto next se interpretará como middleware normal y no podrá manejar errores.
+
+  middleware de manejo de errores de la misma forma que otras funciones de middleware, excepto
+   con cuatro argumentos en lugar de tres, específicamente con la firma (err, req, res, next): */
+
+
+
 
 console.log("para probar el app.js, usar para investigar, se ejecuta al inicio de todo, ubicalo en app.js");
 console.log(path.join(__dirname, 'views'));
@@ -42,7 +52,7 @@ app.use('/productos', productosRouter);// va a linea 9 , creado por video, min 5
     res.render('pro');
   }); */
 
-
+  app.use('/middleware', require('./mid-peter/mid')); //creando otro propio para colocar texto sobre middleware
 
 // catch 404 and forward to error handler
 
