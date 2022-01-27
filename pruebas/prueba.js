@@ -1,32 +1,13 @@
-//var mysql      = require('mysql');
-/*   var connection = mysql.createConnection({
-    host     : 'localhost',
-    port : 8889 ,   //agregue port: no est en original
-    user     : 'root',
-    password : 'root',
-    database: 'ventas'
+var express = require('express');
+var router = express.Router();
+
+//router.get('/productos', function(req, res, next) { se cambia /productos por "/",
+// porque se asume que al ya estar en esta pagina la ruta "/" = "/productos"
+//video exacto  https://youtu.be/eKMDYkSqUKc?t=3453
+router.get('/', function(req, res, next) {
+  
+   res.render('pro', { title: 'aqui estoy en carpeta pruebas' });
+  // res.send ("aqui productosa");
   });
 
-  connection.connect(
-  
-   (err)=>{
-            if(!err) { console.log ("conexion establecida");}
-            else  { console.log("conexion fallida po peter");  }
-
-  
-      }
-  
-  );
-     connection.query("SELECT * FROM tblproductos", function(err,resultados){
-  
-      console.log(resultados);
-  }
-  
-  );  
-  
-  connection.end(); */
-
-
-  console.log("hola");
-
-/*   para ver por consola solo node  pruebas/prueba.js */
+module.exports = router;

@@ -34,7 +34,18 @@ app.use('/users', usersRouter);// va a linea 8
 app.use('/productos', productosRouter);// va a linea 9 , creado por video, min 55:33
 // https://youtu.be/eKMDYkSqUKc?t=3333
 
+ app.use('/probando', require('./pruebas/prueba')); // esta al parecer al usra use , pide una ruta valida como route */
+//app.get('/probando', require('./pruebas/prueba'));
+
+/* app.get('/probando', function(req, res, next) { si funciona esta
+ 
+    res.render('pro');
+  }); */
+
+
+
 // catch 404 and forward to error handler
+
 app.use(function(req, res, next) {
   next(createError(404));
 });

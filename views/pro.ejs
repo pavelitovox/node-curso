@@ -1,0 +1,33 @@
+<%- include layouts/header.ejs %>
+
+<div class="container" style="border:1px solid red">
+
+    <h1><%= title %></h1>
+
+    entonces al ser una pagina independiente cuya ruta creada en app.js con app.use (es un middleware), es decir que no esta en routes/index.js tipica, se debe tratar como una nueva y se le debe agregar mismo que tiene
+    la routes/index.js , con cabecera  var express = require('express');
+    var router = express.Router();</b>  y al final <b>module.exports = router;</b>
+   <br>
+   <br>
+   
+    la ruta hace referencia a pruebas/prueba.js, ruta creada por mi para esta prueba , y este
+archivo renderiza pro.ejs , de la carpeta views (obligatorio views porque asi esta especificado en app.js)
+<img src="https://www.photobox.co.uk/my/photo/full?photo_id=504498736757" alt="">
+<br>
+<br>
+agregar captura de pantalla
+<br>
+<br>
+<br>
+app.use('/probando', require('./pruebas/prueba')); esto esta en app.js como rutas exclusivas usando app.use
+<br>
+quiero colocar la captura de pantalla de app.js y es un webeo , con el tutorial llegare a es aparte
+<br>
+agrego menu probando pero ojo esta es ruta exclusiva de app.js
+<br>
+<br>
+<br>
+importante dejar reclacado que el framework siempre se va primero a app.js , y revisa todo.
+
+</div>
+  <%- include layouts/footer.ejs %>
