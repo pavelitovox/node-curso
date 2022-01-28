@@ -3,14 +3,21 @@ const app = require('../app');
 var router = express.Router();
 
 
+//IMPORTANTE , como no hay router.get que apunte a pagina .ejs en views , solo se ejecuta al inicio nada mas
+//esta pagina y por consola , en web marca no encontrada
+//ademas se debe descomentar module.exports= router;de abajo y app.use(...)en app.js para que reciba.
+
 function saludar(){
 
     console.log('hola suscriptor desde funcion');
-}
+} // se llama en app.js con: var mi = require('./mito/mito') -
+//y mi.saludar;
 
 console.log ("suscribete al canal");
 
 //saludar();
+
+
 
 // ojo cuando se va a una pagina web que se exporta con module.export=route y se llama -
 //- con middleware app.use() , si o si te pide una router.get('/ruta', function(req, res, next){} -
@@ -19,5 +26,7 @@ console.log ("suscribete al canal");
 
 /* router.console("desde mito") no funciona esto*/
 
-module.exports= router; //descomentar si se quiere  llamar como pagina con app.use() en app.js
+//module.exports= router; //IMPORTANTE!
+//descomentar si se quiere  llamar como pagina con app.use() en app.js
+
 module.exports.saludar = saludar();

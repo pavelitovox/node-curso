@@ -12,11 +12,11 @@ var app = express();
 
 //**************** nuevo del video https://youtu.be/QaCtLPBol3E?t=53 sol en nueva-rama , despues seguir con rama3
 
-/* const mi = require('./mito');
 
-console.log(mi.suscribete); */
 
-app.use('/mito', require('./mito/mito')); //descomentar esat linea y descomentar Route en mito.js para ver por web
+//app.use('/mito', require('./mito/mito'));   //IMPORTANTE!
+
+//descomentar esat linea y descomentar Route en mito.js para ver por web
 // esto es necesario para web en la ruta /mito,ademas se debe  exportar desde -
 // la pagina mito con module.exports = route , si no  solo-
 //se puede usar consola como abajo.

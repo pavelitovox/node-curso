@@ -2,8 +2,11 @@ var express = require('express');
 const app = require('../app');
 var router = express.Router();
 
-router.get('/productos', function(req, res, next) { se cambia /productos por "/",
-// porque se asume que al ya estar en esta pagina la ruta "/" = "/productos"
+router.get('/', function(req, res, next) {  //para router.get()  siempre un module.exports = router; y app.use() en app.js
+  
+  res.render('pro', { title: 'aqui estoy en carpeta pruebas' });
+ // res.send ("aqui productosa");
+ });
 //video exacto  https://youtu.be/eKMDYkSqUKc?t=3453
 
 console.log("aqui en prueba.js")
