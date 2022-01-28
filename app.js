@@ -10,6 +10,29 @@ var productosRouter = require('./routes/productos'); //ver por navegador /produc
 
 var app = express();
 
+//**************** nuevo del video https://youtu.be/QaCtLPBol3E?t=53 sol en nueva-rama , despues seguir con rama3
+
+/* const mi = require('./mito');
+
+console.log(mi.suscribete); */
+
+app.use('/mito', require('./mito/mito')); //descomentar esat linea y descomentar Route en mito.js para ver por web
+// esto es necesario para web en la ruta /mito,ademas se debe  exportar desde -
+// la pagina mito con module.exports = route , si no  solo-
+//se puede usar consola como abajo.
+
+// ojo cuando se va a una pagina web que se exporta con module.export=route y se llama -
+//- con middleware app.use() en app.js , si o si te pide una router.get('/ruta', function(req, res, next){} -
+//- en la pagina  ruta que esta recibiendo, si no te dice pagina no encontrada por web y por consola te muestra 404.
+
+var mi = require('./mito/mito'); //ojo que no fue necesario  module.exports =router; porque no use app.use
+// si uso para la ruta app.use,  ahi  si tengo que exportar con router desde mito.js.
+mi.saludar;
+//en mito.js cree una funcion , aplique video min exacto https://youtu.be/QaCtLPBol3E?t=157
+// ojo que podemos mostrar solo en consola, porque si es por pagina necesitamos-
+//- direccionamiento Router y app.use() para llamar a las rutas que se exportaron con module.exports= router;
+
+//******************************************************************* */
 // view engine setup
 app.set('views', path.join(__dirname, 'views')); //app.set es una variable constante cada vez que se llame-
 //-a var express = require('express')arriba ,ejemplo app.set('nombre', peter); es-
