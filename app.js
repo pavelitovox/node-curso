@@ -27,7 +27,9 @@ var app = express();
 
 var mi = require('./mito/mito'); //ojo que no fue necesario  module.exports =router; porque no use app.use
 // si uso para la ruta app.use,  ahi  si tengo que exportar con router desde mito.js.
-mi.saludar;
+mi.saludar; //no muestra nada si mando por exports suma()
+//mi.sumar;
+console.log(mi.sumar); //video exacto  https://youtu.be/YwoUugw10xs?t=300
 //en mito.js cree una funcion , aplique video min exacto https://youtu.be/QaCtLPBol3E?t=157
 // ojo que podemos mostrar solo en consola, porque si es por pagina necesitamos-
 //- direccionamiento Router y app.use() para llamar a las rutas que se exportaron con module.exports= router;

@@ -13,6 +13,14 @@ function saludar(){
 } // se llama en app.js con: var mi = require('./mito/mito') -
 //y mi.saludar;
 
+function sumar(){
+numero1=10;
+numero2=30;
+return(numero1 + numero2);
+//pendiente traer parametros desde app.js como el video https://youtu.be/YwoUugw10xs?t=308
+
+}
+
 console.log ("suscribete al canal");
 
 //saludar();
@@ -29,4 +37,5 @@ console.log ("suscribete al canal");
 //module.exports= router; //IMPORTANTE!
 //descomentar si se quiere  llamar como pagina con app.use() en app.js
 
-module.exports.saludar = saludar();
+//module.exports.saludar = saludar();
+module.exports.sumar = sumar();
