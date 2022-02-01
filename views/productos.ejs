@@ -3,8 +3,53 @@
 <div class="container" style="border:1px solid red">
 
     <h1><%= title %></h1>
-   
+    <h1><%= console.log(Libros) %></h1>
+    
+    <% var encontrado = -1; %>
     <div class="row">
+  <% for (var i=0;i< Libros.length;i++){   %>
+
+
+
+<div class="col-sm-12 col-md-12 col-lg-6">
+  <div class="card mb-2" >
+    <div class="card-body">
+      <h5 class="card-title"><%=Libros[i].titulo  %></h5>
+      <p class="card-text"><%=Libros[i].descripcion%></p>
+      <p class="card-text">$ <%=Libros[i].precio%></p>
+      <a href="#" class="btn btn-primary">Comprar</a>
+    </div>
+  </div>
+</div>
+
+ <% if( Libros[i].titulo == "libro 13") { %>
+      <% encontrado = i; %>
+      <%# break; esta comentado %>  
+      <%/* break; esta comentado  si se quiebra se para el for*/%>  
+
+     <!--  para comentar en ejs el # o /*/* -->
+      <% } %>
+
+
+
+    <% } %> 
+    </div>
+
+   <!--  <% if(true){ %>
+      <h1>foo</h1>
+    <% } else{ %>  
+      <h1>bar</h1>
+   <% } %> -->
+
+
+      <% if( encontrado == -1 ){ %>
+        No se ha encontrado el titulo" 
+        <% } else{ %>  
+          se encontro
+      <% } %>
+    
+
+   <!--  <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-6">
           <div class="card">
             <div class="card-body">
@@ -23,7 +68,16 @@
             </div>
           </div>
         </div>
-      </div>
+        <div class=" col-sm-12 col-md-12 col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
 </div>
   <%- include layouts/footer.ejs %>
